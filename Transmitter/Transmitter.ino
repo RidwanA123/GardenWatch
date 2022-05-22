@@ -34,7 +34,7 @@ void loop() {
   pirValue = digitalRead(pirPin);
   soundSensor = analogRead(soundPin);
   digitalSoundSensor = digitalRead(digitalsoundpin);
-//  Serial.println(soundSensor);
+ 
   
   if (pirValue == HIGH) {
     if (analog == true) {

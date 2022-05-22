@@ -6,6 +6,7 @@ from twilio.rest import Client
 import base64
 import requests
 import asyncio
+import shutil
 import imgbbpy
 Fimage = ""
 
@@ -54,13 +55,24 @@ while True:
         
         img_name = "DETECTION_{}.png".format(img_counter)
         cv2.imwrite(img_name, frame)
+        file = os.path.splitext(img_name)
+        only_name = file[0]
+        extension = file[1]
+        
+        new_base = only_name + '_new' + extension
+  
+        new_name = os.path.join("DetectionImages", new_base)
+        
+     
+        
         pic(img_name)
         send_sms(Fimage)
         
         print("{} MOTION PICTURE TAKEN".format(img_name))
         img_counter += 1
+        shutil.move(img_name, new_name)
         time.sleep(5)
-
+    
 cam.release()
 
 cv2.destroyAllWindows()

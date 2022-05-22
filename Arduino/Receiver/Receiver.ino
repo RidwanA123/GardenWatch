@@ -3,7 +3,7 @@
 #include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
-int buzzerpin = 7
+int buzzerpin = 7;
 RF24 radio(8, 9); // CE, CSN
 
 const byte address[6] = "00001";
@@ -23,4 +23,5 @@ void loop() {
     radio.read(&text, sizeof(text));
     Serial.println("B");
     tone(buzzerpin,500,1000);  //Beep
+}
 }
