@@ -1,4 +1,4 @@
-//Recieving for range testing
+
 
 #include <SPI.h>
 #include <nRF24L01.h>
@@ -12,15 +12,15 @@ void setup() {
   Serial.begin(9600);
   radio.begin();
   radio.openReadingPipe(0, address);
-    pinMode(LED_BUILTIN, OUTPUT);
+    pinMode(LED_BUILTIN, OUTPUT);  
   radio.setPALevel(RF24_PA_MIN);
   radio.startListening();
 }
 
 void loop() {
-  if (radio.available()) {
+  if (radio.available()) {  //When a signal is received, send serial over to Python
     char text[32] = "";
     radio.read(&text, sizeof(text));
     Serial.println("B");
-    tone(buzzerpin,500,1000);
+    tone(buzzerpin,500,1000);  //Beep
 }
