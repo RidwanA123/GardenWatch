@@ -12,7 +12,7 @@ Fimage = ""
 
 def pic(img):
     global Fimage
-    client = imgbbpy.SyncClient('5f7062449d9d5de38c9baba23b812663')
+    client = imgbbpy.SyncClient('')
     image =  client.upload(file=img)
     Fimage = image.url
     print(Fimage)
@@ -20,8 +20,8 @@ def pic(img):
 
 def send_sms(img):
     text = ("Motion Detected in Garden! Photo taken: {}".format(Fimage))
-    account_sid = "AC1d20c171fb735b195dadb5144e1c7cfe"
-    auth_token = "8aaa35cba7f748e63b8df36836743996"
+    account_sid = ""
+    auth_token = ""
     client = Client(account_sid, auth_token)
 
     message = client.messages \
