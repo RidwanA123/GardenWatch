@@ -1,7 +1,7 @@
 # GardenWatch®
 A small gadget that monitors your vegetable and other corps from pests and other animals using sensors, then takes a picture and sends it over to you using SMS (with Twilio) and to the house notification station using Radio.
 <br>
-![GardenWatch](https://github.com/RidwanA123/Jamhacks-GardenWatch-/blob/main/product.jpg?raw=true)
+
 <br>
 <br>
 The sensors consist of a Passive Infrared Motion Sensor to detect movement of animals, and a Sound Sensor to enhance accuracy and confirm that in fact an animal is detected. 
